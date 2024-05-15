@@ -1,3 +1,5 @@
+package chapt.14.programs;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -17,7 +19,7 @@ public class ShowCircle extends Application {
     circle.setFill(Color.WHITE);
     
     // Create a pane to hold the circle 
-    Pane pane = new Pane();
+    Pane pane = new Pane(); 
     pane.getChildren().add(circle);
     
     // Create a scene and place it in the stage
