@@ -1,4 +1,4 @@
-package chapt.14.programs;
+package chapt.com.programs;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
