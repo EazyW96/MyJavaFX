@@ -22,22 +22,22 @@ if %choice%==1 (
 )
 
 :run_all_programs
-for %%F in (src\chpt\14\programs\*.java) do (
+for %%F in (src\chpt\com\programs\*.java) do (
     if "%%~nF" neq "MyJavaFX" (
         echo Running %%~nF
-        javac --module-path "C:\Program Files\Java\javafx-sdk-22.0.1\lib" --add-modules=javafx.controls "%%F"
-        java --module-path "C:\Program Files\Java\javafx-sdk-22.0.1\lib" --add-modules=javafx.controls "%%~nF"
-        pause
+        javac -d bin --module-path "C:\Program Files\Java\javafx-sdk-22.0.1\lib" --add-modules=javafx.controls "%%F"
     )
 )
+java -cp bin;"C:\Program Files\Java\javafx-sdk-22.0.1\lib\javafx.controls.jar" chpt.com.programs.BindingDemo
+pause
 goto start
 
 :run_specific_program
 cls
 echo List of programs:
-dir /b src\chpt\14\programs\*.java
+dir /b src\chpt\com\programs\*.java
 set /p program="Enter the program name (without extension): "
-javac --module-path "C:\Program Files\Java\javafx-sdk-22.0.1\lib" --add-modules=javafx.controls "src\chpt\14\programs\%program%.java"
-java --module-path "C:\Program Files\Java\javafx-sdk-22.0.1\lib" --add-modules=javafx.controls "src\chpt\14\programs\%program%"
+javac -d bin --module-path "C:\Program Files\Java\javafx-sdk-22.0.1\lib" --add-modules=javafx.controls "src\chpt\com\programs\%program%.java"
+java -cp bin;"C:\Program Files\Java\javafx-sdk-22.0.1\lib\javafx.controls.jar" chpt.com.programs.%program%
 pause
 goto start
